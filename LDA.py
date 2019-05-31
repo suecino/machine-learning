@@ -8,14 +8,14 @@ from gensim import corpora
 from gensim.models import LdaModel
 from gensim.corpora import Dictionary
 
-fr = open('./data/phrase.txt', 'r',encoding='utf8')
+fr = open('./data/test', 'r',encoding='utf8')
 train = []
 for line in fr.readlines():
     line = line.split(' ')
     train.append(line)
 
 print(len(train))
-print(' '.join(train[2]))
+print(' '.join(train[0]))
 
 dictionary = corpora.Dictionary(train)
 corpus = [dictionary.doc2bow(text) for text in train]
