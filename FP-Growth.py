@@ -24,11 +24,11 @@ if __name__ == '__main__':
     #@:param include_support表示返回结果是否包含支持度，若include_support=True，返回结果中包含itemset和support，否则只返回itemset
 
     # 生成多维数组
-    ff = open('e:/舆情/title_seg.txt', 'r')
+    ff = open('./data/title_seg.txt', 'r')
     num = len(ff.readlines())
     lists = []
     for i in range(1, num):
-        lists.append(getline(r'e:舆情/title_seg.txt', i).strip().split(' '))
+        lists.append(getline(r'./data/title_seg.txt', i).strip().split(' '))
     print(lists)
 
     frequent_itemsets = fpg.find_frequent_itemsets(lists, minimum_support=4, include_support=True)
@@ -38,8 +38,7 @@ if __name__ == '__main__':
         result.append((itemset, support))
 
     c={}
-    fw=open('e:/舆情/fp_growth.txt','w')
-    #frq=open('e:/舆情/fp_frq.txt','w')
+    fw=open('./result/fp_growth.txt','w')
     result = sorted(result, key=lambda i: i[0])   # 排序后输出
     for itemset, support in result:
         if support>=28 and len(''.join(itemset).strip())<=15 and len(''.join(itemset).strip())>=4:
