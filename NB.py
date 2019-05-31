@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
 
+# 多分类
+
 import jieba
 import os
 
