@@ -1,5 +1,5 @@
 # coding: utf-8
-
+# 2分类机器学习模型，方法：SVM，LR，NB
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -16,7 +16,7 @@ start = time.clock()
 class WAF(object):
     def __init__(self):
         print('读取语料库：')
-        seed_list, content_list = self.get_data('./data/豆瓣')
+        seed_list, content_list = self.get_data('./data/豆瓣')  # 文件格式：老无所依\t差评\t我不能因为它得了奥斯卡就说明它好看，我不能因。。。
 
         print('\t'+'好评数:' + str(len(seed_list)) + '  差评数:' + str(len(content_list)))
 
@@ -56,7 +56,7 @@ class WAF(object):
         print('***********************************************************')
 
     def predict(self):
-        new_pos,new_neg = self.get_data('./data/影评')
+        new_pos,new_neg = self.get_data('./data/影评')   # 格式与训练数据一样
         new=new_pos + new_neg
         pos_y = [0 for i in range(0, len(new_pos))]
         neg_y = [1 for j in range(0, len(new_neg))]
