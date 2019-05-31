@@ -8,7 +8,7 @@ from gensim import corpora
 from gensim.models import LdaModel
 from gensim.corpora import Dictionary
 
-fr = open('e:/data/鹰眼/phrase.txt', 'r',encoding='gbk')
+fr = open('./data/phrase.txt', 'r',encoding='utf8')
 train = []
 for line in fr.readlines():
     line = line.split(' ')
