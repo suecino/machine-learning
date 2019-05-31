@@ -16,7 +16,7 @@ start = time.clock()
 class WAF(object):
     def __init__(self):
         print('读取语料库：')
-        seed_list, content_list = self.get_data('e:/豆瓣')
+        seed_list, content_list = self.get_data('./data/豆瓣')
 
         print('\t'+'好评数:' + str(len(seed_list)) + '  差评数:' + str(len(content_list)))
 
@@ -56,7 +56,7 @@ class WAF(object):
         print('***********************************************************')
 
     def predict(self):
-        new_pos,new_neg = self.get_data('e:/影评')
+        new_pos,new_neg = self.get_data('./data/影评')
         new=new_pos + new_neg
         pos_y = [0 for i in range(0, len(new_pos))]
         neg_y = [1 for j in range(0, len(new_neg))]
