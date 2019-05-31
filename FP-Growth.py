@@ -8,6 +8,7 @@ def getline(thefilepath, line_num):
     return ''
 
 '''
+例子
 lists = [
     ['啤酒', '牛奶', '可乐'],
     ['尿不湿', '啤酒', '牛奶', '橙汁'],
@@ -15,7 +16,7 @@ lists = [
     ['啤酒', '可乐', '尿不湿'],
     ['啤酒', '牛奶', '可乐']
 ]
-print(lists)
+print(lists)   
 '''
 
 if __name__ == '__main__':
